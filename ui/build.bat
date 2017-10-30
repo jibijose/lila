@@ -8,7 +8,7 @@ for %%t in (%ts_apps%) do @(
     call echo Building TypeScript: %%t
     call cd ui\%%t
     call yarn install --non-interactive
-    call yarn run compile --non-interactive
+    call yarn run compile
     call cd ..\..
 )
 
@@ -17,7 +17,7 @@ set apps=site challenge notify learn insight editor puzzle round analyse lobby t
 for %%a in (%apps%) do @(
   call echo Building: %%a
   call cd ui\%%a
-  call yarn install --non-interactive
+  call yarn install
   call gulp dev
   call cd ..\..
 )
